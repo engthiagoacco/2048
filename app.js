@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const gridDisplay = document.querySelector('.grid')
     const scoreDisplay = document.getElementById('score')
     const resultDisplay = document.getElementById('result')
+    
     const width = 4    
     let squares = []
     let score = 0
@@ -29,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     }
 
-//swipe right
+//movendo para direita
 
 function moveRight() {
     for (let i=0; i < 16; i++){
@@ -57,7 +58,7 @@ function moveRight() {
 }
 
 
-//swipe left 
+//movendo para esquerda
 function moveLeft() {
     for (let i=0; i < 16; i++){
        if (i % 4 === 0){
@@ -82,7 +83,7 @@ function moveLeft() {
     }
 }
 
-//swipe down 
+//movendo para baixo 
 function moveDown(){
     for (let i=0; i < 4; i++) {
         let totalOne = squares[i].innerHTML
@@ -103,7 +104,7 @@ function moveDown(){
     }
 }
 
-//swipe up
+//mvendo para cima
 
 function moveUp(){
     for (let i=0; i < 4; i++) {
@@ -124,7 +125,7 @@ function moveUp(){
         squares[i+(width*3)].innerHTML = newColum[3]
     }
 }
-
+//função para juntar linhas
 function combineRow() {
     for (let i=0; i < 15; i++) {
         if (squares[i].innerHTML === squares[i+1].innerHTML) {
@@ -137,7 +138,7 @@ function combineRow() {
     }
     checkForWin()
 }
-
+//funçao para juntar colunas
 function combineColum() {
     for (let i=0; i < 12; i++) {
         if (squares[i].innerHTML === squares[i+width].innerHTML) {
@@ -150,7 +151,7 @@ function combineColum() {
     }
     checkForWin()
 }
-//assing keycodes
+//atribuindo keycodes
 
 function control(e) {
     if(e.keyCode === 39) {
@@ -209,7 +210,7 @@ function checkForWin() {
         }
     }
 }
-
+//verificando se nao existe espaço vazio nem movientos para fazer que dara o game over
 function checkGameOver() {
     let zeros = 0
     for (let i=0; i < squares.length; i++){

@@ -1,3 +1,3 @@
 # 2048
 
-Abra o arquivo index.html e podera jogar
+Jogue em https://engthiagoacco.github.io/2048/
